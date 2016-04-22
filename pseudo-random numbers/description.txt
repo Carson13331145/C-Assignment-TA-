@@ -1,0 +1,55 @@
+Now we are ready to make a program to generate pseudo-random numbers.
+As we all know, the random number that C++ makes is pseudo,
+When the seed is unchanged, everytime you run the program, it will
+make the same sequence of random numbers. But now, you are invited to
+challenge yourself to write the program, it will takes you some time.
+
+For details: http://www.cplusplus.com/reference/random/
+
+First you need to know is the idea of the method:
+1. Linear-Congruential: (a * x + c) % m, a > 0, m > 0, m % a < m / a.
+   This formulus is a linear function to generate random numbers
+   a - multiplier | x - seed | c - increment | m - modulus
+note: You may know that every random-number-engin generater need a seed.
+2. calculation of (a * x + c) % m.
+   This formulus need to avoid integer overflow, that means when x is
+   very big like 2147483646, it should still return the right answer.
+   The algorithm is very well-known and you should find by yourself.
+
+Then, you should learn something about 'mod' and 'linear_congruential_engine'
+1. class mod is a model for linear_congruential_engine, which realize the
+formulus "(a * x + c)" in calc();
+2. class linear_congruential_engine is a generater which sets seed and make
+random-number with its public member 'mod_temp'
+
+---------- mod_my ----------
+
+int m, a, c;  // This define the three parameters for the formulus.
+
+mod_my(int _m, int _a, int _c);  // Constructer, initialize three params.
+
+int calc(int x);  // Caculator, take x as a seed to make number and return.
+
+---------- linear_congruential_engine ----------
+
+int multiplier, increment, modulus;  // Correspond to a, c, m
+    // Initialize to 16807, 1, 2147483647 as default.
+
+unsigned int default_seed_my, seed_my;  // Initialize to 1u as default.
+
+mod_my mod_temp;  // It is the model for this engin.
+
+linear_congruential_engine_my();  // Default constructer.
+
+linear_congruential_engine_my(int _m, int _a, int _c, int _s);
+
+void seed(unsigned int);  // Set seed.
+
+int min();  // Return the least bound of the range
+
+int max();  // Return the most bound of the range.
+
+void discard(unsigned long long);  // Discard the generator.
+    // Use its own seed to generate x random numbers (x is the input param).
+
+int operator()();  // Overload the '()'

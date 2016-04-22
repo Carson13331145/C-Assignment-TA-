@@ -1,0 +1,19 @@
+Please create a class Vector.
+
+The declaration of Vector is in 'Vector.h'
+
+before programing, you should revise the operations between vectors.
+
+note:
+
+add() vecter1 + vecter2
+
+sub() vecter1 - vecter2
+
+rev() means reverse of the vector like (1, 2) -> (-1, -2);
+
+dot_product() µã³Ë£»
+
+cross_product() ²æ³Ë£¨È¡Ä££©£»
+
+print() display the vecter in the form like "(1, 2)\n";

@@ -1,0 +1,55 @@
+Carson write a simple program to solve Fabonaci and Factorial.
+But he want to know how it cost time when different input was given.
+Now you are invited as an best expert to fix it.
+Read main.cpp for details about the function of 'timer.h'.
+
+clock_f // the system provides a piece of time
+>>>>>> TIC_TOC(namespace) <<<<<<
+------ timer(class_1) ------
+tic_f // start timing
+toc_f // end timing
+tictoc // print all the cost-time information(3 digits after the decimal point)
+*Format:
+line 0 - 1: 0.050ms
+------ timer_controller(class_2) ------
+# Used for storing timers
+create // create timer
+display // print the total-cost-time of all the timers(3 digits after the decimal point)
+*format:
+#Timer_1: 0.950ms
+#Timer_2: 2.000ms
+
+something you need to know:
+class 'timer' and 'timer_controller' is needed;
+every clock_f() takes 50 clocks;
+every millisecond takes 1000 clocks;
+there are less than 10000 lines and 5 timers;
+
+standard input
+1 2 3 4 5
+6 7 8 9 10
+
+standard input
+input: 1, result: 1
+input: 2, result: 2
+input: 3, result: 2
+input: 4, result: 4
+input: 5, result: 5
+line 0 - 1: 0.050ms
+line 1 - 2: 0.050ms
+line 2 - 3: 0.150ms
+line 3 - 4: 0.250ms
+line 4 - 5: 0.450ms
+input: 1, result: 720
+input: 2, result: 5040
+input: 3, result: 40320
+input: 4, result: 362880
+input: 5, result: 3628800
+line 0 - 1: 0.300ms
+line 1 - 2: 0.350ms
+line 2 - 3: 0.400ms
+line 3 - 4: 0.450ms
+line 4 - 5: 0.500ms
+#Timer_1: 0.950ms
+#Timer_2: 2.000ms
+

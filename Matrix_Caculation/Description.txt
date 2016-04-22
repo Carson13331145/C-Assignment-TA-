@@ -1,0 +1,12 @@
+Please complete the class Matrix.
+Suppose you have understood the overload operator of C++.
+there are only three function you need to define:
+bool operator ==(const Matrix& matOther)
+bool operator !=(const Matrix& matOther)
+void operator +=(const Matrix& matOther) // addition
+void operator -=(const Matrix& matOther) // substraction
+void operator *=(const Matrix& matOther) // production
+note: if the caculation is invalid, print like the following:
+"invalid addition.\n"
+"invalid substraction.\n"
+"invalid multiplication.\n" and return a matrix as: "badMat" = [-1]

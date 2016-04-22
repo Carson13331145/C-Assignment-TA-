@@ -1,0 +1,10 @@
+Please complete two classs Point and Line.
+Point-format: (X, Y)
+Line-format: A*x + B*y + C = 0
+function details:
+# Point::display() return a string like this "(1, 1)";
+# Line::display() return a string like this
+  "1x+2y+1=0" / "-1x+1y=0" / "1y-40=0";
+# dist_PP(...) distance between two points;
+# dist_LP(...) distance between a Line and a point;
+# dist_LL(...) distance between a Line and a Line;

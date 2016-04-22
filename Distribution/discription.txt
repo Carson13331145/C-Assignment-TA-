@@ -1,0 +1,64 @@
+Last week, we finish the job of pseudo-random number.
+This time, you are required to use the random number to
+make an experiment of normal-distribution.
+
+Details about normal-distribution:
+https://en.wikipedia.org/wiki/Normal_distribution
+
+Details about realization in C++
+http://www.cplusplus.com/reference/random/normal_distribution/
+
+---------- adaptor ----------
+about: normalize the random numbers to [0, 1].
+
+adaptor()  // default constructor
+
+double min() const  // return the minimun that the adaptor
+                    // can express.
+double max() const  // return the maximun that the adaptor
+                    // can express.
+double operator()()  // normalize the random numbers to [0, 1].
+
+Tips(pseudo code):
+remember, you need to realize adaptor as the following way!
+# b = the digits of numeric_limits<double>
+# r = generator.max - generator.min + 1
+# log2r = log(r) / log(2)
+# k = max(1, (b + log2r - 1) / log2r)
+# sum = 0 and tmp = 0
+# loop k -> 0
+# sum += (generator.randomNumber - generator.min) * tmp
+# tmp = tmp * r
+# end loop
+# return sum / tmp
+
+---------- normal_distribution_my ----------
+about: adapt the random number with adaptor and simulate
+the normal distribution.
+
+double mean, stddev;  // two parameter: mean and standard deviation.
+
+adaptor aurng;  // adaptor to normalize the random number
+
+normal_distribution_my();  // default constructor, mean = 0, stddev = 1.
+
+double min() const;  // return the minimun real number it can express.
+
+double max() const;  // return the maximun real number it can express.
+
+double operator()();  // use its adaptor to simulate normal distribution.
+
+Tips(pseudo code):
+remember, you need to realize normal_distribution as the following way!
+# loop until r2 -> (0, 1]
+# x = 2 * adaptor - 1
+# y = 2 * adaptor - 1
+# r2 = x * x + y * y
+# end loop
+# mult = sqrt(-2 * log(r2) / r2)
+# ret = y * mult
+# ret = ret * standard deviation + mean
+# return ret
+
+* Given the pseudo code, you should think deeply in the two algorithms,
+and find out its elias.

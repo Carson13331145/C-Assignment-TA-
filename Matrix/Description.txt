@@ -1,0 +1,23 @@
+Please create a class named Matrix.
+The declaration of Matrix is in 'Matrix.h'
+note:
+// common constructor
+// print out "construct an uninitialised matrix.\n"
+Matrix();
+// Initialise the members in class
+// print out "construct a matrix called matrix_name.\n"
+Matrix(string, int, int, int**);
+// copy constructor
+// print out "copy construct a matrix called matrix_name.\n"
+Matrix(const Matrix &);
+// destructor
+// print out "release memory from a matrix called matrix_name.\n"
+~Matrix()
+// reset the name of matrix
+void setName()
+// display function, format:
+// matrix_name = [
+// 1, 2, 3
+// 3, 2, 1
+// ]
+void print()
