@@ -1,0 +1,60 @@
+Today we talk about AI. Can you imaging how the world will be 100 years later and what the robot will do to us. That's what we are going to consider and now, I invite you to challenge my AI.
+
+Before we start the game, there are something you need to know about the rules.
+1. The name of this chess is Backgammon, and the Chinese name is 五子棋.
+2. Two players set a piece in turns (each by one) until the following situations happen.
+a. There are 5 pieces continually in horizontal line.
+b. There are 5 pieces continually in vertical line.
+c. There are 5 pieces continually in diagonal line.
+d. There are 5 pieces continually in anti-diagonal line.
+
+for example:
+(picture from java-version of Super AI)
+
+My strategy:
+1. Firstly I build two score-tables for player and AI, it is based on the rules above.
+2. Every time the player or AI set a piece, the score-table will be updated.
+3. According the two score-tables, my AI will decide to attack or defend.
+4. The attack and defend method is different, but will make sure that the probability of victory will be improved.
+
+Map feature:
+  1 2 3 4 5 6 7 8 9
+1 O @ O O O O O O O
+2 O O # @ @ O O O O
+3 O O O # @ O O O O
+4 O O O @ # @ O O O
+5 O O O # # # O O O
+6 O O # @ @ O # O O
+7 O O O O O O O O O
+8 O O O O O O O O O
+9 O O O O O O O O O
+
+O - no pieces
+@ - AI
+# - YOU
+
+What you need to input:
+> x y
+(x, y) is the position of the chess-table.
+"x" is vertical and "y" is horizonal.
+
+Description of Code:
+----- main.cpp -----
+start(int type)
+// type = 0 that means your first, and type = 1 is AI's first.
+AINext()
+// generate next position to set piece.(core algorithm here)
+display()
+// show the updated chess-table, with system("cls") will be better.
+showGrades()
+// show the grades-table of player and AI in details.
+showWin()
+// show win-table of player and AI in details.
+
+----- MyProgram.h -----
+MyProgram.setTable()
+// AI set a piece and update the chess-table in MyProgram.
+MyProgram.reset()
+// reset all the tables and variables.
+MyProgram.getNext();
+// 
